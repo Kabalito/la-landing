@@ -1,0 +1,43 @@
+name: Deploy Nuxt to GitHub Pages
+
+on:
+  push:
+    branches: ["main"] # O "master", revisa cómo se llama tu rama principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20" # Versión de Node recomendada
+
+      # Instalar dependencias
+      - run: npm ci # Usa 'npm install' si no tienes package-lock.json, pero 'ci' es mejor
+
+      # Generar el sitio estático
+      - run: npm run generate
+
+      # Arreglar el problema de carpetas con guion bajo (_) en GitHub Pages
+      - name: Add .nojekyll
+        run: touch .output/public/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
