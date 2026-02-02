@@ -2,25 +2,31 @@ name: Deploy Nuxt to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # O "master", revisa cómo se llama tu rama principal
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9 # O la versión que estés usando localmente
+
       - uses: actions/setup-node@v4
         with:
-          node-version: "20" # Versión de Node recomendada
+          node-version: "20"
+          cache: 'pnpm'
 
-      # Instalar dependencias
-      - run: npm ci # Usa 'npm install' si no tienes package-lock.json, pero 'ci' es mejor
+      - name: Install dependencies
+        run: pnpm install
 
-      # Generar el sitio estático
-      - run: npm run generate
+      - name: Static HTML export
+        run: pnpm run generate
 
-      # Arreglar el problema de carpetas con guion bajo (_) en GitHub Pages
-      - name: Add .nojekyll
+      # Este archivo es vital para que GitHub no ignore carpetas que empiezan con "_"
+      - name: Fix Jekyll issue
         run: touch .output/public/.nojekyll
 
       - name: Upload artifact
