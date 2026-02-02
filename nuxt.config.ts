@@ -4,6 +4,7 @@ import svgLoader from 'vite-svg-loader'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
   app: {
     head: {
       titleTemplate: '%s - Donde la Lógica del Código se encuentra con la Creatividad del Diseño.',
@@ -15,6 +16,9 @@ export default defineNuxtConfig({
         href: `${process.env.NUXT_APP_BASE_URL}/favicon.ico`,
       }],
     },
+
+    baseURL: '/nombre-de-tu-repositorio/',
+    buildAssetsDir: 'assets',
   },
 
   devtools: {
@@ -124,6 +128,10 @@ export default defineNuxtConfig({
 
   build: {
     transpile: ['vuetify'],
+  },
+
+  nitro: {
+    preset: 'github-pages',
   },
 
   modules: ['@vueuse/nuxt', '@nuxtjs/i18n', '@nuxtjs/device', '@pinia/nuxt'],
