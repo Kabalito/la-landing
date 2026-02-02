@@ -53,7 +53,7 @@ const timeline = [
           </h2>
 
           <p class="text-body-1 mb-0 max-width-700">
-            Soy Luis Amaya, radicado en San Juan de los Morros. Comencé en el diseño gráfico en 2016 y evolucioné hacia el código, lo que me permite construir interfaces que no solo se ven bien, sino que están perfectamente optimizadas.
+            Soy Luis Amaya, Soy de en San Juan de los Morros. Comencé en el diseño gráfico en 2016 y evolucioné hacia el código, lo que me permite construir interfaces que no solo se ven bien, sino que están perfectamente optimizadas.
           </p>
         </div>
 
