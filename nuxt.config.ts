@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       }],
     },
 
-    baseURL: '/nombre-de-tu-repositorio/',
+    baseURL: '/luisamaya-web/',
     buildAssetsDir: 'assets',
   },
 

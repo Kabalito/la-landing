@@ -21,6 +21,7 @@ const pagesList: Menu[] = [
   { name: 'Sobre mí', to: { path: '/', hash: '#about' } },
   { name: 'Referencias', to: { path: '/', hash: '#references' } },
   { name: 'Contacto', to: { path: '/', hash: '#contact' } },
+  { name: 'Galería', to: { path: '/gallery' } },
 ]
 </script>
 

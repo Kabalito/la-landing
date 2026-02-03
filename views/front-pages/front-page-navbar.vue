@@ -2,8 +2,8 @@
 import { useWindowScroll } from '@vueuse/core'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useDisplay } from 'vuetify'
-import navImg from '@images/front-pages/misc/nav-item-col-img.png'
 import logo from '@images/GO.png'
+import navImg from '@images/front-pages/misc/nav-item-col-img.png'
 
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 
@@ -48,6 +48,13 @@ const menuItems: MenuItem[] = [
       { name: 'Sobre mí', to: { path: '/', hash: '#about' } },
       { name: 'Referencias', to: { path: '/', hash: '#references' } },
       { name: 'Contacto', to: { path: '/', hash: '#contact' } },
+    ],
+  },
+  {
+    listTitle: 'Páginas',
+    listIcon: 'tabler-file-description',
+    navItems: [
+      { name: 'Galería', to: { path: '/gallery' } },
     ],
   },
 ]
