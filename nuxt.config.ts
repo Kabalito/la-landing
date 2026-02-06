@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       }],
     },
 
-    baseURL: '/luisamaya-web/',
+    baseURL: '/la-landing/',
     buildAssetsDir: 'assets',
   },
 
