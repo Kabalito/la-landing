@@ -5,7 +5,9 @@ import CarsBanner from '@/views/front-pages/landing-page/cars-banner.vue'
 import CustomersReview from '@/views/front-pages/landing-page/customers-review.vue'
 import FaqSection from '@/views/front-pages/landing-page/faq-section.vue'
 import Features from '@/views/front-pages/landing-page/features.vue'
+import GalleryPreview from '@/views/front-pages/landing-page/gallery-preview.vue'
 import PricingPlans from '@/views/front-pages/landing-page/pricing-plans.vue'
+import WhatIDo from '@/views/front-pages/landing-page/what-i-do.vue'
 import { useConfigStore } from '@core/stores/config'
 
 const store = useConfigStore()
@@ -44,6 +46,9 @@ useIntersectionObserver(
 
     <CarsBanner ref="refHome" />
 
+    <!-- Que se hace -->
+    <WhatIDo />
+
     <!-- 👉 Servicios -->
     <div :style="{ 'background-color': 'rgb(var(--v-theme-surface))' }">
       <Features ref="refServices" />
@@ -58,6 +63,9 @@ useIntersectionObserver(
     <div :style="{ 'background-color': 'rgb(var(--v-theme-surface))' }">
       <FaqSection ref="refAbout" />
     </div>
+
+    <!-- 👉 Galería -->
+    <GalleryPreview />
 
     <!-- 👉 Referencias -->
     <div :style="{ 'background-color': 'rgb(var(--v-theme-surface))' }">

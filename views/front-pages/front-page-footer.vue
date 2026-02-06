@@ -2,6 +2,7 @@
 import footerDarkBg from '@images/front-pages/backgrounds/footer-bg-dark.png'
 import footerLightBg from '@images/front-pages/backgrounds/footer-bg-light.png'
 
+import cvPdf from '@/assets/pdf/cv.pdf'
 import logo from '@images/GO.png'
 
 import { themeConfig } from '@themeConfig'
@@ -71,18 +72,25 @@ const pagesList: Menu[] = [
                 </div>
                 <div class="d-flex align-center gap-2">
                   <VIcon
-                    icon="tabler-phone"
+                    icon="tabler-brand-whatsapp"
                     size="18"
                     color="white"
                   />
-                  <span class="text-body-1 text-white-variant">+58 412 838 9193</span>
+                  <a
+                    class="text-body-1 text-white-variant"
+                    href="https://wa.me/584128389193"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +58 412 838 9193
+                  </a>
                 </div>
               </div>
 
               <div class="d-flex flex-wrap gap-3">
                 <VBtn
                   color="primary"
-                  href="/cv-luis-amaya.pdf"
+                  :href="cvPdf"
                   target="_blank"
                 >
                   Descargar CV en PDF
