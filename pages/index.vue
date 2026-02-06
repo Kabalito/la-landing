@@ -49,14 +49,14 @@ useIntersectionObserver(
     <!-- Que se hace -->
     <WhatIDo />
 
-    <!-- 👉 Servicios -->
-    <div :style="{ 'background-color': 'rgb(var(--v-theme-surface))' }">
-      <Features ref="refServices" />
-    </div>
-
     <!-- 👉 Portafolio -->
     <div :style="{ 'background-color': 'rgb(var(--v-theme-surface))' }">
       <PricingPlans ref="refPortfolio" />
+    </div>
+
+    <!-- 👉 Servicios -->
+    <div :style="{ 'background-color': 'rgb(var(--v-theme-surface))' }">
+      <Features ref="refServices" />
     </div>
 
     <!-- 👉 Sobre mí + Timeline -->
