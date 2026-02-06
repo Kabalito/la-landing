@@ -2,10 +2,8 @@
 import { useWindowScroll } from '@vueuse/core'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useDisplay } from 'vuetify'
-import logo from '@images/GO.png'
 import navImg from '@images/front-pages/misc/nav-item-col-img.png'
-
-import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
+import logo from '@images/GO.png'
 
 const props = defineProps({
   activeId: String,
@@ -332,9 +330,11 @@ const getSafeTo = (to: any) => {
 
         <VSpacer />
 
-        <div class="d-flex gap-x-4">
+        <!--
+          <div class="d-flex gap-x-4">
           <NavbarThemeSwitcher />
-        </div>
+          </div>
+        -->
       </VAppBar>
     </div>
   </div>
